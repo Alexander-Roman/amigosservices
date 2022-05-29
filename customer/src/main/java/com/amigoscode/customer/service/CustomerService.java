@@ -26,7 +26,7 @@ public class CustomerService {
         //TODO: Check email for being taken already
         var savedCustomer = customerRepository.saveAndFlush(customer);
         var fraudCheckResponse = restTemplate.getForObject(
-                "http://localhost:8081/api/v1/fraud-check/{customerId}",
+                "http://FRAUD/api/v1/fraud-check/{customerId}",
                 FraudCheckResponse.class,
                 savedCustomer.getId()
         );
